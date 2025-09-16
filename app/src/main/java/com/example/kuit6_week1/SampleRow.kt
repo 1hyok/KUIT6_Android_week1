@@ -9,10 +9,11 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun SampleRow(
+    modifier: Modifier = Modifier,
     content: @Composable () -> Unit
 ) {
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceEvenly,
         verticalAlignment = Alignment.CenterVertically
     ) {
