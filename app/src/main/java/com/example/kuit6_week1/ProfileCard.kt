@@ -6,9 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -154,17 +152,15 @@ import androidx.compose.ui.unit.sp
 fun ProfileCard(modifier: Modifier = Modifier) {
     Box(
         modifier
-            .width(490.dp)
-            .height(255.dp)
+            .size(490.dp, 255.dp)
             .padding(
                 top = 45.dp, bottom = 70.dp, start = 45.dp, end = 205.dp
             )
     ) {
         Column(
             Modifier
-//                .width(240.dp)
-//                .height(140.dp)
-                .fillMaxSize()
+                .size(240.dp, 140.dp)
+//                .fillMaxSize()
                 .border(
                     width = 1.dp, color = Color.Black,
                     shape = RoundedCornerShape(10.dp)
@@ -231,7 +227,10 @@ fun ProfileCard(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview
+@Preview(
+    widthDp = 490,    // Preview 너비 늘리기
+    heightDp = 255    // Preview 높이 늘리기
+)
 @Composable
 private fun ProfileCardPreview() {
     ProfileCard()
