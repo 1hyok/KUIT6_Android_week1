@@ -152,15 +152,17 @@ import androidx.compose.ui.unit.sp
 fun ProfileCard(modifier: Modifier = Modifier) {
     Box(
         modifier
-            .size(490.dp, 255.dp)
+//            .width(490.dp)
+            .size(width = 490.dp, height = 255.dp)
             .padding(
                 top = 45.dp, bottom = 70.dp, start = 45.dp, end = 205.dp
             )
     ) {
         Column(
-            Modifier
-                .size(240.dp, 140.dp)
-//                .fillMaxSize()
+            modifier = Modifier
+//                .width(240.dp)
+//                .size(width = 140.dp, height = 240.dp)
+                .size(width = 240.dp, height = 140.dp)
                 .border(
                     width = 1.dp, color = Color.Black,
                     shape = RoundedCornerShape(10.dp)
@@ -169,8 +171,8 @@ fun ProfileCard(modifier: Modifier = Modifier) {
         ) {
             Row(
                 Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 6.dp),
+                    .padding(bottom = 6.dp)
+                    .fillMaxWidth(),
                 horizontalArrangement = Arrangement.End
             ) {
                 Image(
@@ -185,49 +187,42 @@ fun ProfileCard(modifier: Modifier = Modifier) {
                 thickness = 0.5.dp
             )
 
-            Row(Modifier.padding(top = 8.dp)) {
+            Text(
+                "이름 : 정일혁",
+                modifier = Modifier
+                    .width(55.dp)
+                    .padding(top = 8.dp),
+                fontSize = 10.sp,
+//                fontFamily = FontFamily.I
+            )
 
-                Text(
-                    "이름 : 정일혁",
-                    modifier = Modifier
-                        .width(55.dp),
-                    fontSize = 10.sp,
-                    lineHeight = 12.sp
-                )
-            }
-
-            Row(Modifier.padding(top = 9.dp)) {
-                Text(
-                    "학번 : 202111373",
-                    modifier = Modifier
-                        .width(65.dp),
-                    fontSize = 8.sp,
-                    lineHeight = 10.sp
-                )
-            }
-            Row(Modifier.padding(top = 5.dp)) {
-                Text(
-                    "학과 : 컴퓨터공학부",
-                    modifier = Modifier
-                        .width(94.dp),
-                    fontSize = 8.sp,
-                    lineHeight = 10.sp
-                )
-            }
-            Row(Modifier.padding(top = 5.dp, bottom = 5.dp)) {
-                Text(
-                    "생년월일 : 2000/05/03",
-                    modifier = Modifier
-                        .width(81.dp),
-                    fontSize = 8.sp,
-                    lineHeight = 10.sp
-                )
-            }
+            Text(
+                "학번 : 202111373",
+                modifier = Modifier
+                    .width(65.dp)
+                    .padding(top = 9.dp),
+                fontSize = 8.sp,
+            )
+            Text(
+                text = "학과 : 컴퓨터공학부",
+                modifier = Modifier
+                    .width(94.dp)
+                    .padding(top = 5.dp),
+                fontSize = 8.sp,
+            )
+            Text(
+                "생년월일 : 2000/05/03",
+                modifier = Modifier
+                    .width(81.dp)
+                    .padding(top = 5.dp, bottom = 5.dp),
+                fontSize = 8.sp,
+            )
         }
     }
 }
 
 @Preview(
+    showBackground = true,
     widthDp = 490,    // Preview 너비 늘리기
     heightDp = 255    // Preview 높이 늘리기
 )
